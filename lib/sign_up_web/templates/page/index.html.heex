@@ -1,0 +1,40 @@
+<section class="phx-hero">
+  <h1><%= gettext "Welcome to the User Form!", name: "Phoenix" %></h1>
+  <p>Users galore</p>
+</section>
+<%= form_for @changeset, "/", fn user_form -> %>
+  <label>
+    User
+    <%= text_input user_form, :username %>
+    <%= error_tag user_form, :username %>
+  </label>
+
+  <label>
+    Password
+    <%= text_input user_form, :password %>
+    <%= error_tag user_form, :password %>
+
+  </label>
+
+  <label>
+    Age
+    <%= textarea user_form, :age %>
+    <%= error_tag user_form, :age %>
+
+  </label>
+
+  <label>
+    Date of Birth
+    <%= date_select user_form, :birthdate %>
+    <%= error_tag user_form, :birthdate %>
+
+  </label>
+
+  <label>
+    Terms & Conditions
+    <%= checkbox user_form, :terms_and_conditions %>
+    <%= error_tag user_form, :terms_and_conditions %>
+  </label>
+
+  <%= submit "Submit" %>
+<% end %>
